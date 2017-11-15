@@ -5,7 +5,7 @@ import org.springframework.hateoas.Resources;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(url = "http://localhost:8080")
+@FeignClient(url = "http://localhost:8080", name="${apiDocumentation.name:apiDocumentation}")
 public interface PersonClient {
     @RequestMapping(method = RequestMethod.GET, value = "/persons")
     Resources<Person> getPersons();
